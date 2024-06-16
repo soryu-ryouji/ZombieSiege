@@ -1,11 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using TMPro;
 using UnityEngine.UI;
 
-public class AboutPanel : BasePanel
+public class TipPanel : BasePanel
 {
-    public Text txtInfo;
+    public TMP_Text txtInfo;
 
     public Button btnSure;
 
@@ -13,7 +11,7 @@ public class AboutPanel : BasePanel
     {
         btnSure.onClick.AddListener(() =>
         {
-            UIManager.Instance.HidePanel<AboutPanel>();
+            UIManager.Instance.HidePanel<TipPanel>();
         });
     }
 

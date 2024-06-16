@@ -80,12 +80,12 @@ public class ChooseRolePanel : BasePanel
                 UpdateLockBtn();
 
                 //提示面板 显示购买成功
-                UIManager.Instance.ShowPanel<AboutPanel>().ChangeInfo("购买成功");
+                UIManager.Instance.ShowPanel<TipPanel>().ChangeInfo("Successful Purchase");
             }
             else
             {
                 //提示面板 显示 金钱不足
-                UIManager.Instance.ShowPanel<AboutPanel>().ChangeInfo("金钱不足");
+                UIManager.Instance.ShowPanel<TipPanel>().ChangeInfo("Not Enough Money");
             }
         });
 
@@ -102,14 +102,12 @@ public class ChooseRolePanel : BasePanel
         btnBack.onClick.AddListener(() =>
         {
             UIManager.Instance.HidePanel<ChooseHeroPanel>();
-            //让摄像机转回去后再显示开始界面
             Camera.main.GetComponent<CameraAnimator>().TurnRgiht(() =>
             {
                 UIManager.Instance.ShowPanel<BeginPanel>();
             });
         });
 
-        //更新模型显示
         ChangeHero();
     }
 
