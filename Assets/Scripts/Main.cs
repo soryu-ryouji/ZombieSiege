@@ -20,7 +20,7 @@ public class Main : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // UIManager.Instance.Show<BeginPanel>();
+        UIManager.Instance.ShowPanel<BeginPanel>();
         // MusicManger.Instance.PlayMusic("Music/开始界面", DataManager.Instance.musicData.musicVolume, true);
     }
 }
