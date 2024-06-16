@@ -1,49 +1,48 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-// using Script.FrameWork.MusicManager;
-using UnityEngine;
-using UnityEngine.UI;
+﻿using UnityEngine.UI;
 
 public class ConfigPanel : BasePanel
 {
     public Button btnClose;
-    public Toggle tgMusic;
-    public Toggle tgSound;
-    public Slider sldMusic;
-    public Slider sldSound;
+    public Toggle togMusic;
+    public Toggle togSound;
+    public Slider sliderMusic;
+    public Slider sliderSound;
 
     public override void Init()
     {
-        // btnClose.onClick.AddListener(() =>
-        // {
-        //     UIManager.Instance.Hide<SettingPanel>(true, null);
-        //     DataManager.Instance.SaveMusicData();
-        // });
-        // tgMusic.onValueChanged.AddListener((isOn) =>
-        // {
-        //     MusicManger.Instance.MuteMusic(!isOn);
-        //     DataManager.Instance.musicData.musicMute = !isOn;
-        // });
-        // tgSound.onValueChanged.AddListener((isOn) =>
-        // {
-        //     MusicManger.Instance.MuteSound(!isOn);
-        //     DataManager.Instance.musicData.soundMute = !isOn;
-        // });
-        // sldMusic.onValueChanged.AddListener((value) =>
-        // {
-        //     MusicManger.Instance.ChangeMusicVolume(value);
-        //     DataManager.Instance.musicData.musicVolume = value;
-        // });
-        // sldSound.onValueChanged.AddListener((value) =>
-        // {
-        //     MusicManger.Instance.ChangeSoundVolume(value);
-        //     DataManager.Instance.musicData.soundVolume = value;
-        // });
+        MusicData data = GameDataMgr.Instance.musicData;
+        togMusic.isOn = data.musicOpen;
+        togSound.isOn = data.soundOpen;
+        sliderMusic.value = data.musicValue;
+        sliderSound.value = data.soundValue;
 
-        // // 初始化数据
-        // sldMusic.value = DataManager.Instance.musicData.musicVolume;
-        // sldSound.value = DataManager.Instance.musicData.soundVolume;
-        // tgMusic.isOn = !DataManager.Instance.musicData.musicMute;
-        // tgSound.isOn = !DataManager.Instance.musicData.soundMute;
+        btnClose.onClick.AddListener(() =>
+        {
+            GameDataMgr.Instance.SaveMusicData();
+            UIManager.Instance.HidePanel<ConfigPanel>();
+        });
+
+        togMusic.onValueChanged.AddListener((v) =>
+        {
+            BKMusic.Instacne.SetIsOpen(v);
+            GameDataMgr.Instance.musicData.musicOpen = v;
+        });
+
+        togSound.onValueChanged.AddListener((v) =>
+        {
+            GameDataMgr.Instance.musicData.soundOpen = v;
+        });
+
+        sliderMusic.onValueChanged.AddListener((v) =>
+        {
+            BKMusic.Instacne.ChangeValue(v);
+            GameDataMgr.Instance.musicData.musicValue = v;
+        });
+
+        sliderSound.onValueChanged.AddListener((v) =>
+        {
+            //记录音效大小的数据
+            GameDataMgr.Instance.musicData.soundValue = v;
+        });
     }
 }
