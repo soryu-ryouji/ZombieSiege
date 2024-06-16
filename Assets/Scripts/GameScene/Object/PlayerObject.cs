@@ -58,9 +58,7 @@ public class PlayerObject : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
             animator.SetTrigger("Fire");
-            
     }
-
 
     //3.攻击动作的不同处理
     /// <summary>
@@ -89,7 +87,7 @@ public class PlayerObject : MonoBehaviour
 
     public void ShootEvent()
     {
-        //进行摄像检测 
+        //进行摄像检测
         //前提是需要有开火点
         RaycastHit[] hits = Physics.RaycastAll(new Ray(gunPoint.position, this.transform.forward), 1000, 1 << LayerMask.NameToLayer("Monster"));
 
@@ -114,7 +112,6 @@ public class PlayerObject : MonoBehaviour
             }
         }
     }
-
 
     //4.钱变化的逻辑
     public void UpdateMoney()
