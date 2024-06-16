@@ -96,7 +96,7 @@ public class GamePanel : BasePanel
                 for (int i = 0; i < towerBtns.Count; i++)
                 {
                     towerBtns[i].gameObject.SetActive(true);
-                    towerBtns[i].InitInfo(nowSelTowerPoint.chooseIDs[i], "数字键" + (i + 1));
+                    towerBtns[i].InitInfo(nowSelTowerPoint.chooseIDs[i], "Num" + (i + 1));
                 }
             }
             //如果造过塔
@@ -107,7 +107,7 @@ public class GamePanel : BasePanel
                     towerBtns[i].gameObject.SetActive(false);
                 }
                 towerBtns[1].gameObject.SetActive(true);
-                towerBtns[1].InitInfo(nowSelTowerPoint.nowTowerInfo.nextLev, "空格键");
+                towerBtns[1].InitInfo(nowSelTowerPoint.nowTowerInfo.nextLev, "Space");
             }
         }
 
