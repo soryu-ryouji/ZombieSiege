@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,9 +9,9 @@ public class TowerBtn : MonoBehaviour
 {
     public Image imgPic;
 
-    public Text txtTip;
+    public TMP_Text txtTip;
 
-    public Text txtMoney;
+    public TMP_Text txtMoney;
 
     /// <summary>
     /// 初始化 按钮信息的方法
