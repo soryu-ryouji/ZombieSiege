@@ -200,7 +200,7 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.38768116
+      - time: 0.38308346
         functionName: KnifeEvent
         data: 
         objectReferenceParameter: {instanceID: 0}
