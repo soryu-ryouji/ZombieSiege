@@ -2293,9 +2293,9 @@ MonoBehaviour:
   quitBtn: {fileID: 7672384719570879144}
   botTrans: {fileID: 7672384720375646696}
   towerBtns:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 7672384719071528528}
+  - {fileID: 7672384721010851160}
+  - {fileID: 7672384719547335229}
 --- !u!1 &7672384721003651668
 GameObject:
   m_ObjectHideFlags: 0
